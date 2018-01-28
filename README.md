@@ -27,4 +27,4 @@ queue.execute().then(function(results){
 
 
 ```
-CDN: `https://cdn.jsdelivr.net/gh/serweb-labs/seqjs@1/seqjs.js`
+CDN: `https://cdn.jsdelivr.net/gh/serweb-labs/seqjs@v1/seqjs.js`
