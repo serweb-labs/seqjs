@@ -7,14 +7,17 @@ Useful when the order is important, for example when we need to execute many pro
 
 ``` js
 var queue = new Seq();
+var myBusinessList = {};
+var myUser;
+
 queue.add(callablePromise, firstParam, secondParam);
 
 queue.add(getBusiness, firstParam, secondParam).then(function(data){
-  var myBusiness = data;
+  myBusinessList = data;
 })
 
 queue.add(getUser, userId).then(function(data){
-  var myUser = {profile: data.data.profile, product: myProduct[data.data.productId]  };
+  myUser = {profile: data.data.profile, bussiness: myBusinessList[data.data.businessId]  };
 })
 
 // like q.all
@@ -24,3 +27,4 @@ queue.execute().then(function(results){
 
 
 ```
+CDN: `https://cdn.jsdelivr.net/gh/serweb-labs/seqjs@1/seqjs.js`
