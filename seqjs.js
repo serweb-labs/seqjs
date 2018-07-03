@@ -62,7 +62,12 @@ window.Seq = function () {
   _self.execute = function () {
     return new Promise(function (resolve, reject) {
       _self.deferred = { resolve: resolve, reject: reject };
-      _self.next();
+      if (_self.list.length === 0) {
+        resolve({ solved: _self.ok, rejected: _self.err })
+      }
+      else {        
+        _self.next();
+      }
     })
   }
 }
